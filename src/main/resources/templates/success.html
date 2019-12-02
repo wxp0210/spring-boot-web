@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    登陆成功
+    <!--可以通过th来修改当前标签的任意属性-->
+    <span id="span" class="spanClass" th:id="${hello}" th:class="${hello}" th:text="${hello}">aaaaaa</span>
+    <hr/>
+    <!--区别th:text与th:utext-->
+    <h1 th:text="${hey}"></h1>
+    <h1 th:utext="${hey}"></h1>
+    <hr/>
+    <!--遍历集合-->
+    <!--th:each：每次遍历都会生成当前标签，4个h1-->
+    <h1 th:text="${user}" th:each="user:${users}"></h1>
+    <hr/>
+    <h1>
+        <span th:each="user:${users}">[[${user}]]</span>
+    </h1>
+</body>
+</html>
